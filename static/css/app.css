@@ -1,0 +1,84 @@
+.overlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	text-align: center;
+	display: none;
+	z-index: 1000 !important;
+}
+
+.spinner-border {
+	top: 50% !important;
+	position: absolute;
+}
+
+h2 {
+	font-size: 50px;
+	text-align: center;
+	width: 100%;
+	background: black;
+	padding: 20px;
+	line-height: 70px;
+	color: white;
+}
+
+h4 {
+	margin-top: 20px;
+}
+
+.input-group-text.positive {
+	background-color: #c5ffdb !important;
+}
+
+.input-group-text.negative {
+	background-color: #fddddd !important;
+}
+
+.row {
+	margin-top: 10px;
+}
+
+.txt_input {
+	height: 300px !important;
+}
+
+.txt_summary {
+	height: 200px !important;
+}
+
+#max_words, #num_beams {
+	margin-top: 7px !important;
+}
+
+.wrapper {
+position: absolute;
+  bottom: 10px;
+  right:10px;
+}
+
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+.blinking{
+    animation:blinkingText 1s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: #000;    }
+    49%{    color: #000; }
+    60%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: #000;    }
+}
+
+.blinkingComingSoon{
+    animation:blinkingTextComingSoon 2s infinite;
+}
+@keyframes blinkingTextComingSoon{
+    0%{     color: #000;    }
+    49%{    color: #000; }
+    60%{    color: transparent;}
+    99%{    color:transparent;  }
+    100%{   color: #000;    }
+}

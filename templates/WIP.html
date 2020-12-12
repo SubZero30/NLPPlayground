@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+    <title>Work-In-Progress</title>
+    <style>
+      .img-container {
+        text-align: center;
+      }
+    </style>
+    <link rel="icon" href="{{ url_for('static', filename='/favicon-16x16.png') }}"
+</head>
+<body>
+	<div class="img-container">
+    <img src="{{url_for('static', filename='/patience1.jpg')}}" align="middle" alt="Have patience, bro!"/>
+    </div>
+    <br>
+    <br>
+    <center><a href = "{{ url_for('index') }}"> Go to homepage</a></center>
+</body>
+</html>

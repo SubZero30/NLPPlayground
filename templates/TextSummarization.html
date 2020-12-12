@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Text Summarization</title>
+    <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/tst.css') }}" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300|Open+Sans:300|Oxygen|Material+Icons"
+        rel="stylesheet">
+    <link rel="icon" href="{{ url_for('static', filename='/favicon-16x16.png') }}"
+</head>
+
+<body>
+    <h2> Text Summarization </h2>
+    <div class="">
+        <div class="row">
+            <div class="col-sm-1"></div>
+
+            <div class="col-sm-10">
+                <center>
+                    <h6>by sumedh</h6>
+                    <a href = "mailto: sumedh.khodke@gmail.com" target="_blank"> E-mail</a>
+                    <a> | </a>
+                    <a href = "https://www.linkedin.com/in/sumedhkhodke/" target="_blank">LinkedIn</a> 
+                    <a> | </a>
+                    <a href = "https://twitter.com/sumedh_khodke" target="_blank">Twitter</a>
+                    <br></br>
+                    <h6 align=right><a href = "{{ url_for('index') }}"> Go to homepage</a></h6>
+                    <p> <b>Model Architectures</b>: <a href = "https://huggingface.co/transformers/model_doc/gpt2.html" target="_blank">GPT-2</a> and <a href = "https://huggingface.co/transformers/model_doc/t5.html" target="_blank">T5</a></p>
+                </center>
+                <div class="overlay">
+                    <div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div>
+                </div>
+
+                <h4> Text Input </h4>
+                <textarea class="form-control txt_input"
+                    id="txt_input">Mahendra Singh Dhoni (born 7 July 1981), is a former Indian international cricketer who captained the Indian national team in limited-overs formats from 2007 to 2016 and in Test cricket from 2008 to 2014. Under his captaincy, India won the 2007 ICC World Twenty20, the 2010 and 2016 Asia Cups, the 2011 ICC Cricket World Cup and the 2013 ICC Champions Trophy. A right-handed middle-order batsman and wicket-keeper, Dhoni is one of the highest run scorers in One Day Internationals (ODIs) with more than 10,000 runs scored and is considered an effective "finisher" in limited-overs formats. He is also regarded by some as one of the best wicket-keepers and captains in modern limited-overs international cricket. Dhoni has been the recipient of many awards, including the ICC ODI Player of the Year award in 2008 and 2009 (the first player to win the award twice), the Rajiv Gandhi Khel Ratna award in 2007, the Padma Shri, India's fourth highest civilian honour, in 2009 and the Padma Bhushan, India's third highest civilian honour, in 2018.[6] Dhoni also holds numerous captaincy records such as the most wins by an Indian captain in ODIs and T20Is, and most back-to-back wins by an Indian captain in ODIs. In 2009, Dhoni also led the Indian team to number one position for the first time in the ICC Test rankings. Time magazine included Dhoni in its annual Time 100 list as one of the "Most Influential People in the World." He announced his retirement from Tests on 30 December 2014. In June 2015, Forbes ranked Dhoni at 23rd in the list of highest paid athletes in the world, estimating his earnings at US$31 million. In 2016, a biopic M.S. Dhoni: The Untold Story was made about his life and cricketing career up to the Indian team's win at the 2011 Cricket World Cup. MS Dhoni announced his retirement from international cricket on 15 August 2020.</textarea>
+                <h4> Parameters </h4>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="input_model">Model</label>
+                        <select id="input_model" class="form-control">
+                            <option selected>GPT-2 : Generative Pre-trained Transformer-2</option>
+                            <option>T-5 : TextToText Transfer Transformer</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="max_words" id="label_max_words">Max words in summary : 120</label>
+                        <input type="range" class="custom-range" min="50" max="200" value="120" step="10" id="max_words">
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="num_beams" id="label_num_beams">Search factor : 5</label>
+                        <input type="range" class="custom-range" min="1" max="20" value="5" step="1" id="num_beams">
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label></label>
+                        <button type="button" class="btn btn-primary btn-lg btn-block"
+                            id="btn-process">Summarize this!</button>
+                    </div>
+                </div>
+
+                <h4> Text Summary </h4>
+                <textarea class="form-control txt_summary" id="input_summary" readonly> </textarea>
+                <br>
+                <br>
+                <h6 align=right><a href = "{{ url_for('index') }}"> Go to homepage</a></h6>
+
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+</body>
+
+</html>

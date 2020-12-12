@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    
+    <title>Text Prediction</title>
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/tpt.css" rel="stylesheet">
+    <link href="../static/css/bootstrap-suggest.css" rel="stylesheet">
+    <script src="../static/js/jquery-3.4.1.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/bootstrap-suggest.js"></script>
+    <script src="../static/js/tpt.js"></script>
+
+    <link rel="icon" href="{{ url_for('static', filename='/favicon-16x16.png') }}"
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300|Open+Sans:300|Oxygen|Material+Icons" rel="stylesheet">
+</head>
+
+
+<body>
+    <div class="overlay">
+        <div class="spinner-border text-primary" role="status"><span class="sr-only">Loading...</span></div>
+    </div>
+    <h2> Text Prediction </h2>
+    <center>
+            <h6>by sumedh</h6>
+            <a href = "mailto: sumedh.khodke@gmail.com" target="_blank"> E-mail</a>
+            <a> | </a>
+            <a href = "https://www.linkedin.com/in/sumedhkhodke/" target="_blank">LinkedIn</a> 
+            <a> | </a>
+            <a href = "https://twitter.com/sumedh_khodke" target="_blank">Twitter</a>
+            <br></br>
+            <div class="col-sm-10">
+            <h6 align=right><a href = "{{ url_for('index') }}"> Go to homepage</a></h6></div>
+        </center>
+    <div class="row">
+        <div class="form-group col-md-3"></div>
+        <div class="form-group col-md-7">
+        <p> <b>Model Architectures</b>: <a href = "https://huggingface.co/transformers/model_doc/bert.html" target="_blank">BERT</a>, <a href = "https://huggingface.co/transformers/model_doc/bart.html" target="_blank">BART</a>, <a href = "https://huggingface.co/transformers/model_doc/electra.html" target="_blank">ELECTRA</a>, <a href = "https://huggingface.co/transformers/model_doc/roberta.html" target="_blank">ROBERTA</a>, <a href = "https://huggingface.co/transformers/model_doc/xlnet.html" target="_blank">XLNET</a> and <a href = "https://huggingface.co/transformers/model_doc/xlmroberta.html" target="_blank">XLM-Roberta</a></p></div>
+        <div class="form-group col-md-2"></div></div>
+    <div class="row">
+        <div class="col-sm-1"></div>
+        
+        <div class="col-sm-10">
+            <div class="form-row">
+                <div class="form-group col-md-10">
+                    <br>
+                    <h4>Type a sentence and press space to get suggestions for the next word:</h4>
+                    <a>Note: Mobile device users can make use of the Predict button</a>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <textarea class="form-control txt_input" id="input_text" rows="1"></textarea>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <br>
+                    <label for="max_words" id="label_max_words">Top n words: 4</label>
+                    <input type="range" class="custom-range" min="1" max="10" value="4" step="1" id="max_words">
+                </div>
+         		<div class="form-group col-sm-4"></div>
+                <div class="form-group col-md-2" align="right">
+                    <label></label>
+                    <button type="button" class="btn btn-primary btn-lg btn-block" id="btn-process-first" >Predict</button>
+                </div>
+
+            </div>
+            <h4> Comparison of predicted outputs : </h4>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label for="text_paragraphs">BERT</label>
+                    <textarea class="form-control txt_response" id="text_bert" readonly></textarea>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="text_paragraphs">BART</label>
+                    <textarea class="form-control txt_response" id="text_bart" readonly></textarea>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="text_paragraphs">ELECTRA</label>
+                    <textarea class="form-control txt_response" id="text_electra" readonly></textarea>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="text_paragraphs">ROBERTA</label>
+                    <textarea class="form-control txt_response" id="text_roberta" readonly></textarea>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="text_paragraphs">XLNET</label>
+                    <textarea class="form-control txt_response" id="text_xlnet" readonly></textarea>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="text_paragraphs">XLM-Roberta</label>
+                    <textarea class="form-control txt_response" id="text_xlm" readonly></textarea>
+                </div>
+            </div>
+            <br>
+            <h6 align=right><a href = "{{ url_for('index') }}"> Go to homepage</a></h6>
+            <br>
+        <div class="col-sm-1"></div>
+    </div>
+</body>
+
+</html>
